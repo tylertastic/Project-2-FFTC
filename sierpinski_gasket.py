@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import time
 
+startTime = time.perf_counter()
 point_lst = []
 
 for y in range(0,256):
@@ -13,3 +15,8 @@ for p in point_lst:
     plt.scatter(p[0], p[1], s=1, c='black', marker='s')
 
 plt.show()
+# line 19 is not working for some reason
+plt.close('all')
+
+endTime = time.perf_counter()
+print("Execution Time", (endTime - startTime)/60)
